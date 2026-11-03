@@ -11,6 +11,34 @@
 期中專題作品（AIPE04）・作者：劉秉勳 ([@HSUN0724](https://github.com/HSUN0724))
 📑 專題簡報：[`docs/SmartPhotoAssistant-presentation.pptx`](docs/SmartPhotoAssistant-presentation.pptx)
 
+![首頁](docs/screenshots/home.png)
+
+---
+
+## 畫面截圖
+
+### 攝影建議 — 選擇情境取得完整參數
+以「運動」情境為例：ISO、光圈、快門、白平衡、對焦模式、底片模擬與建議鏡頭，並可一鍵帶入曝光模擬或請 AI 解釋。
+
+![攝影建議](docs/screenshots/recommend.png)
+
+### 曝光模擬 — 曝光量與參數適用性分開判斷
+ISO 400、f/4、1/125 的 EV 與運動情境基準相近，但系統仍警告「快門不在此情境建議範圍」，避免拍出動態模糊。
+
+<p align="center"><img src="docs/screenshots/exposure.png" alt="曝光模擬" width="720"></p>
+
+### 拍照分析 — 手機直接拍照或從相簿選擇
+
+![拍照分析](docs/screenshots/upload.png)
+
+### 行動裝置
+
+<p align="center">
+  <img src="docs/screenshots/mobile-home.png" alt="手機版首頁" width="300">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/mobile-recommend.png" alt="手機版攝影建議" width="300">
+</p>
+
 ---
 
 ## 專案動機
@@ -87,7 +115,8 @@ SmartPhotoAssistant/
 └── docs/
     ├── SmartPhotoAssistant-presentation.pptx
     ├── public-url-guide.md     # 臨時公開網址操作說明
-    └── changelog/              # 各版本修正紀錄
+    ├── changelog/              # 各版本修正紀錄
+    └── screenshots/            # README 截圖
 ```
 
 ## 安裝與執行
