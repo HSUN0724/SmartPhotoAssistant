@@ -1,5 +1,7 @@
 # 📷 Smart Photo Assistant — AI 智慧攝影助手
 
+**繁體中文** | [English](README.en.md)
+
 > 結合**規則計算**與**生成式 AI 解說**的智慧攝影助理：依拍攝情境推薦相機參數、讀取照片 EXIF 分析曝光，並以 Gemini 提供畫面分析與自然語言教學。
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
