@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="card shadow reveal">
+
+        <div class="card-header card-header-accent">
+            <i class="bi bi-images"></i>
+            我的照片
+        </div>
+
+        <div class="card-body">
+
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <h5 class="mb-3">
+                        <i class="bi bi-plus-circle"></i>
+                        新增照片
+                    </h5>
+
+                    <form action="{{ url_for('add_my_photo') }}" method="post" enctype="multipart/form-data">
+
+                        <div class="retro-file-upload mb-4">
+                            <input type="file" id="my-photo-input" name="photo" accept=".jpg,.jpeg,image/jpeg" required
+                                hidden>
+
+                            <label for="my-photo-input" class="retro-file-button">
+                                <i class="bi bi-camera"></i>
+                                選擇照片
+                            </label>
+
+                            <span id="my-photo-name" class="retro-file-name">
+                                尚未選擇照片
+                            </span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-upload"></i>
+                            新增到我的照片
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+            {% if photos %}
+
+            <p class="mb-4">
+                目前共保存 {{ photos|length }} 張照片。
+            </p>
+
+            <div class="row g-4">
+
+                {% for photo in photos %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="{{ url_for(
+            'static',
+            filename='uploads/' ~ photo['filename']
+        ) }}" class="card-img-top" alt="已保存照片">
+
+
+                        {% if photo["simulated_filename"] %}
+
+                        <div class="p-3">
+
+                            <p class="small fw-bold mb-2">
+                                <i class="bi bi-sliders"></i>
+                                曝光模擬結果
+                            </p>
+
+                            <img src="{{ url_for(
+            'static',
+            filename='uploads/' ~ photo['simulated_filename']
+        ) }}" class="card-img-top rounded" alt="曝光模擬結果">
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <div class="card-body">
+
+                            <p class="small mb-2">
+                                {{ photo["filename"] }}
+                            </p>
+
+                            <p class="small text-secondary mb-3">
+                                保存時間：
+                                {{ photo["created_at_local"] }}
+                            </p>
+
+                            <form action="{{ url_for('delete_my_photo', photo_id=photo['id']) }}" method="post"
+                                onsubmit="return confirm('確定要刪除這張照片嗎？刪除後無法復原。');">
+                                <button type="submit" class="btn btn-outline-danger w-100">
+                                    <i class="bi bi-trash"></i>
+                                    刪除照片
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-light">
+                目前還沒有保存任何照片。
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+    const myPhotoInput =
+        document.getElementById("my-photo-input");
+
+    const myPhotoName =
+        document.getElementById("my-photo-name");
+
+    myPhotoInput?.addEventListener("change", () => {
+        const file = myPhotoInput.files?.[0];
+
+        myPhotoName.textContent = file
+            ? file.name
+            : "尚未選擇照片";
+    });
+</script>
+
+{% endblock %}

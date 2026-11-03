@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="card shadow mx-auto" style="max-width: 520px;">
+        <div class="card-header card-header-accent">
+            登入
+        </div>
+
+        <div class="card-body">
+            {% if error %}
+            <div class="alert alert-warning">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">帳號或 Email</label>
+                    <input type="text" name="username" class="form-control" placeholder="請輸入帳號或 Email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">密碼</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    登入
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

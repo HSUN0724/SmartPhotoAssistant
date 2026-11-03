@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}Smart Photo Assistant｜讓每一次按下快門更有把握{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-layout">
+        <div class="hero-copy reveal">
+            <span class="hero-badge"><span class="status-dot" aria-hidden="true"></span> 手機與電腦都能使用</span>
+
+            <h1 class="hero-title mt-3">
+                拍得更好，<br>
+                <span class="text-gradient">從看懂參數開始。</span>
+            </h1>
+
+            <p class="hero-subtitle mt-4">
+                Smart Photo Assistant 結合 EXIF、攝影規則與 Gemini AI，
+                把複雜的光圈、快門和 ISO 變成清楚好懂的拍攝建議。
+            </p>
+
+            <div class="hero-actions">
+                <a href="/upload" class="btn btn-warning btn-lg px-4">
+                    <i class="bi bi-camera" aria-hidden="true"></i>
+                    開始照片分析
+                </a>
+
+                <a href="/recommend" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-sliders" aria-hidden="true"></i>
+                    取得參數建議
+                </a>
+            </div>
+
+            <div class="hero-proof" aria-label="主要功能摘要">
+                <span><strong>21</strong> 種拍攝情境</span>
+                <span><strong>3</strong> 大曝光參數</span>
+                <span><strong>AI</strong> 畫面理解</span>
+            </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+            <div class="camera-orbit orbit-one"></div>
+            <div class="camera-orbit orbit-two"></div>
+            <div class="camera-lens">
+                <div class="lens-reflection"></div>
+                <div class="lens-core"></div>
+            </div>
+            <div class="floating-tag tag-iso"><small>ISO</small><strong>400</strong></div>
+            <div class="floating-tag tag-aperture"><small>光圈</small><strong>f/2.8</strong></div>
+            <div class="floating-tag tag-shutter"><small>快門</small><strong>1/500</strong></div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container home-features mt-5">
+
+    <div class="section-heading text-center reveal">
+        <span class="eyebrow">從拍攝到理解</span>
+        <h2 class="mt-3">一套完整的攝影學習流程</h2>
+        <p class="text-secondary mb-0">選擇你現在需要的功能，逐步找到更適合的拍攝設定。</p>
+    </div>
+
+    <div class="row g-4 mt-2">
+
+        <div class="col-md-4 reveal">
+
+            <a href="/recommend" class="feature-link">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <span class="feature-number">01</span>
+                        <div class="feature-icon">
+                            <i class="bi bi-sliders" aria-hidden="true"></i>
+                        </div>
+
+                        <h4>參數推薦</h4>
+
+                        <p>
+                            從 21 種常見情境中，快速取得光圈、快門與 ISO 建議。
+                        </p>
+
+                        <span class="feature-cta">查看建議 <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="col-md-4 reveal">
+
+            <a href="/exposure" class="feature-link">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <span class="feature-number">02</span>
+                        <div class="feature-icon">
+                            <i class="bi bi-brightness-high" aria-hidden="true"></i>
+                        </div>
+
+                        <h4>曝光與照片模擬</h4>
+
+                        <p>選擇照片並即時調整曝光三角，比較參數對畫面明暗造成的影響。</p>
+
+                        <span class="feature-cta">開始模擬 <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="col-md-4 reveal">
+
+            <a href="/upload" class="feature-link">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <span class="feature-number">03</span>
+                        <div class="feature-icon">
+                            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+                        </div>
+
+                        <h4>拍攝分析</h4>
+
+                        <p>
+                            手機拍照或選圖，讀取 EXIF 並取得 AI 改善建議。
+                        </p>
+
+                        <span class="feature-cta">分析照片 <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="knowledge-cta reveal">
+        <div>
+            <span class="eyebrow">持續精進</span>
+            <h2 class="h3 mt-3 mb-2">想再多學一點攝影知識？</h2>
+            <p class="text-secondary mb-0">瀏覽系統整理的攝影文章，把參數知識帶到下一次拍攝。</p>
+        </div>
+        <a href="/articles" class="btn btn-outline-warning btn-lg">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            瀏覽知識專區
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

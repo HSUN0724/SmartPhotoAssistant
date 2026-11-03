@@ -1,0 +1,28 @@
+# 環境變數與機密資料
+.env
+.env.*
+!.env.example
+
+# Python 暫存與虛擬環境
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 本機資料庫（含使用者帳號）
+*.db
+*.sqlite3
+
+# 本機工具
+cloudflared.exe
+cloudflared
+
+# 使用者上傳的照片
+static/uploads/*
+!static/uploads/.gitkeep
+
+# 系統檔
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

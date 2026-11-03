@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container page-shell py-4 py-md-5">
+    <header class="page-heading text-center reveal">
+        <span class="eyebrow">共用情境參數</span>
+        <h1 class="mt-2">
+            <i class="bi bi-sliders" aria-hidden="true"></i>
+            攝影建議
+        </h1>
+        <p class="lead text-secondary mb-0">選擇情境，取得會直接帶入曝光模擬的同一組參數。</p>
+    </header>
+
+    <div id="analysis-context-card" class="card border-info mt-4" hidden>
+        <div class="card-header bg-info text-dark"><i class="bi bi-link-45deg" aria-hidden="true"></i> 已接收照片分析結果</div>
+        <div class="card-body">
+            <p id="analysis-context-summary" class="mb-2"></p>
+            <ul id="analysis-context-list" class="result-list mb-0"></ul>
+        </div>
+    </div>
+
+    <div class="card shadow mt-4 reveal">
+        <div class="card-header"><i class="bi bi-camera-reels" aria-hidden="true"></i> 選擇拍攝情境</div>
+        <div class="card-body">
+            <label class="form-label fw-bold" for="scene">拍攝情境</label>
+            <select class="form-select form-select-lg" id="scene">
+                <option value="" selected disabled>請選擇拍攝情境</option>
+                {% for scene in scenes %}
+                <option value="{{ scene.key }}">{{ scene.name }}</option>
+                {% endfor %}
+            </select>
+            <button id="recommend-button" class="btn btn-warning btn-lg w-100 mt-3" type="button" disabled>
+                <i class="bi bi-magic" aria-hidden="true"></i>
+                取得推薦設定
+            </button>
+        </div>
+    </div>
+
+    <div id="result" aria-live="polite"></div>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-outline-light"><i class="bi bi-house-door" aria-hidden="true"></i> 返回首頁</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/recommend.js', v='6.4') }}"></script>
+{% endblock %}
